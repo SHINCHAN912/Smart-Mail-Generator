@@ -39,6 +39,11 @@ class EmailGenerateRequest(BaseModel):
     length: str = Field("Medium", description="Short, Medium, or Long")
     language: str = Field("English", description="Language of the generated email")
     
+    sender_date: Optional[str] = Field(None, description="Custom date for the email")
+    sender_name: Optional[str] = Field(None, description="Sender's name")
+    sender_mobile: Optional[str] = Field(None, description="Sender's mobile number")
+    sender_email: Optional[str] = Field(None, description="Sender's email address")
+    
     # Allows users to use their own keys if configured
     user_groq_key: Optional[str] = None
     provider: Optional[str] = Field("groq", description="groq")

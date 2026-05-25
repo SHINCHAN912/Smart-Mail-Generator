@@ -18,6 +18,10 @@ export interface EmailConfig {
   length: string;
   language: string;
   provider: 'groq';
+  sender_date?: string;
+  sender_name?: string;
+  sender_mobile?: string;
+  sender_email?: string;
 }
 
 export interface EmailDraft {

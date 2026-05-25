@@ -21,13 +21,35 @@ class AIService:
         length = params.get("length", "Medium")
         language = params.get("language", "English")
         
+        sender_date = params.get("sender_date") or ""
+        sender_name = params.get("sender_name") or ""
+        sender_mobile = params.get("sender_mobile") or ""
+        sender_email = params.get("sender_email") or ""
+        
+        actual_recipient = params.get("recipient", "").strip()
+        recipient_display = actual_recipient if actual_recipient else "Sir/Madam"
+        recipient_instruction = f"IMPORTANT: You MUST greet the recipient exactly by name: '{recipient_display}'. For example: 'Respected {recipient_display},' or 'Dear {recipient_display},'." if actual_recipient else "IMPORTANT: Since no recipient name is provided, use 'Respected Sir/Madam,'."
+
         system_instruction = (
             "You are SmartMail AI, an elite email copywriter. Your goal is to write perfect emails "
             "that match the requested category, recipient, tone, length, and language. "
-            "You must output ONLY a valid JSON object. Do not include markdown code block syntax (like ```json ... ```). "
+            "You must output ONLY a valid JSON object. Do not include markdown code block syntax (like ```json ... ```).\n\n"
+            "CRITICAL SALUTATION RULES:\n"
+            "If the category is 'Professional', or if the tone is 'Professional' or 'Formal', you MUST start the email body with a highly professional salutation.\n"
+            f"{recipient_instruction}\n\n"
+            "CATEGORY-SPECIFIC STRUCTURING RULES:\n"
+            "- Professional: Write a formal, polished business communication. Always start with a highly respectful greeting following the SALUTATION RULES above.\n"
+            "- Leave Request: Structure as a formal request for time off/leave. Incorporate dates and durations properly, and keep it extremely respectful.\n"
+            "- Cold Email: Write a compelling, concise outreach email with a strong hook, clear value proposition, and an direct call to action (CTA).\n"
+            "- Interview Follow-up: Write a polite follow-up after an interview. Express gratitude, reiterate enthusiasm, and inquire about next steps.\n"
+            "- Thank You: Write a sincere expression of gratitude for a specific action, help, or gift.\n\n"
+            "SENDER DETAILS INTEGRATION:\n"
+            "If the Sender Name, Sender Email, Sender Mobile, or Date are provided, you MUST integrate them naturally into the email at the appropriate places:\n"
+            "- The Date should be placed near the top or mentioned in the body of the email where relevant.\n"
+            "- The Sender Name, Email, and Mobile Number should be placed in the sign-off/signature block at the bottom of the email (e.g., 'Sincerely,\\n[Sender Name]\\nEmail: [Sender Email]\\nMobile: [Sender Mobile]'). Do not use dummy placeholders like '[Your Name]' or '[Contact Info]' if the actual sender details are provided.\n\n"
             "The JSON object must have exactly these keys:\n"
             '- "subject": The generated subject line for the email.\n'
-            '- "content": The body of the email (exclude subject, salutation/sign-off should match tone).\n'
+            '- "content": The body of the email (exclude subject, salutation/sign-off should match tone and guidelines above).\n'
             '- "score_grammar": A score from 0-100 indicating grammar and spelling accuracy.\n'
             '- "score_spam": A score from 0-100 indicating likelihood of getting caught in spam filters (low is good).\n'
             '- "score_clarity": A score from 0-100 indicating readability and clarity.'
@@ -41,6 +63,10 @@ class AIService:
             f"Tone: {tone}\n"
             f"Length: {length} (Short = ~50-100 words, Medium = ~150-250 words, Long = ~300+ words)\n"
             f"Language: {language}\n"
+            f"Sender Name: {sender_name}\n"
+            f"Sender Email: {sender_email}\n"
+            f"Sender Mobile Number: {sender_mobile}\n"
+            f"Date: {sender_date}\n"
             f"User request details: {prompt}\n\n"
             f"Ensure formatting is clean and professional (use proper spacing and paragraphs). "
             f"Return only the raw JSON."

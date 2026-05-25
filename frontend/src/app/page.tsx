@@ -6,18 +6,11 @@ import EmailWorkspace from '../components/EmailWorkspace';
 import HistoryTab from '../components/HistoryTab';
 import StarredTab from '../components/StarredTab';
 import SettingsTab from '../components/SettingsTab';
-import AuthModal from '../components/AuthModal';
 import { AppSettings, EmailDraft, EmailHistoryItem } from '../types';
 
 export default function Home() {
   // Navigation & UI state
   const [activeTab, setActiveTab] = useState<'generator' | 'history' | 'starred' | 'settings'>('generator');
-  const [darkMode, setDarkMode] = useState(true);
-  const [authModalOpen, setAuthModalOpen] = useState(false);
-
-  // Authentication State
-  const [token, setToken] = useState<string | null>(null);
-  const [userEmail, setUserEmail] = useState<string | null>(null);
 
   // Application Data States
   const [settings, setSettings] = useState<AppSettings>({
@@ -27,131 +20,56 @@ export default function Home() {
   const [draft, setDraft] = useState<EmailDraft | null>(null);
   const [history, setHistory] = useState<EmailHistoryItem[]>([]);
 
-  // Helper Functions
-  const fetchHistory = async (authToken: string) => {
-    try {
-      const baseUrl = 'http://localhost:8000';
-      const historyRes = await fetch(`${baseUrl}/api/emails/history`, {
-        headers: { 'Authorization': `Bearer ${authToken}` },
-      });
+  // Local Storage Helpers
+  const saveHistoryLocally = (newHistory: EmailHistoryItem[]) => {
+    setHistory(newHistory);
+    localStorage.setItem('smartmail_history', JSON.stringify(newHistory));
+  };
 
-      if (historyRes.ok) {
-        const historyData = await historyRes.json();
-        setHistory(historyData);
+  const loadHistoryLocally = () => {
+    const stored = localStorage.getItem('smartmail_history');
+    if (stored) {
+      try {
+        setHistory(JSON.parse(stored));
+      } catch (e) {
+        console.error('Error parsing history', e);
       }
-    } catch (err) {
-      console.error('Error fetching email history', err);
-    }
-  };
-
-  const handleLogout = () => {
-    localStorage.removeItem('smartmail_token');
-    setToken(null);
-    setUserEmail(null);
-    setHistory([]);
-    // Reset draft database sync status
-    if (draft) {
-      setDraft((prev) => (prev ? { ...prev, id: undefined, is_saved: false, rating: 0 } : null));
-    }
-    setActiveTab('generator');
-  };
-
-  const fetchUserData = async (authToken: string) => {
-    try {
-      const baseUrl = 'http://localhost:8000';
-      const userRes = await fetch(`${baseUrl}/api/auth/me`, {
-        headers: { 'Authorization': `Bearer ${authToken}` },
-      });
-
-      if (userRes.ok) {
-        const userData = await userRes.json();
-        setUserEmail(userData.email);
-        
-        // Fetch history once user is confirmed
-        fetchHistory(authToken);
-      } else {
-        // Token might have expired
-        handleLogout();
-      }
-    } catch (err) {
-      console.error('Network error checking credentials', err);
-    }
-  };
-
-  const refreshHistory = async () => {
-    if (token) {
-      await fetchHistory(token);
     }
   };
 
   const handleToggleSave = async (id: number, currentSaved: boolean) => {
-    if (!token) return;
-    try {
-      const baseUrl = 'http://localhost:8000';
-      const res = await fetch(`${baseUrl}/api/emails/${id}/save`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`,
-        },
-        body: JSON.stringify({ is_saved: !currentSaved }),
-      });
-
-      if (res.ok) {
-        await fetchHistory(token);
-      }
-    } catch (err) {
-      console.error('Failed to toggle star status', err);
-    }
+    const updated = history.map(item => item.id === id ? { ...item, is_saved: !currentSaved } : item);
+    saveHistoryLocally(updated);
   };
 
   const handleRate = async (id: number, ratingVal: number) => {
-    if (!token) return;
-    try {
-      const baseUrl = 'http://localhost:8000';
-      const res = await fetch(`${baseUrl}/api/emails/${id}/rate`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`,
-        },
-        body: JSON.stringify({ rating: ratingVal }),
-      });
-
-      if (res.ok) {
-        await fetchHistory(token);
-      }
-    } catch (err) {
-      console.error('Failed to submit rating', err);
-    }
+    const updated = history.map(item => item.id === id ? { ...item, rating: ratingVal } : item);
+    saveHistoryLocally(updated);
   };
 
   const handleDelete = async (id: number) => {
-    if (!token) return;
     if (!confirm('Are you sure you want to delete this email from your history?')) return;
-    try {
-      const baseUrl = 'http://localhost:8000';
-      const res = await fetch(`${baseUrl}/api/emails/${id}`, {
-        method: 'DELETE',
-        headers: { 'Authorization': `Bearer ${token}` },
-      });
-
-      if (res.ok) {
-        // If the draft currently in editor workspace was deleted, reset draft ID.
-        if (draft && draft.id === id) {
-          setDraft((prev) => (prev ? { ...prev, id: undefined, is_saved: false, rating: 0 } : null));
-        }
-        await fetchHistory(token);
-      }
-    } catch (err) {
-      console.error('Failed to delete email record', err);
+    const updated = history.filter(item => item.id !== id);
+    saveHistoryLocally(updated);
+    if (draft && draft.id === id) {
+      setDraft((prev) => (prev ? { ...prev, id: undefined, is_saved: false, rating: 0 } : null));
     }
   };
 
-  const handleLoginSuccess = (authToken: string) => {
-    localStorage.setItem('smartmail_token', authToken);
-    setToken(authToken);
-    fetchUserData(authToken);
+  const handleAddHistory = (newItem: Omit<EmailHistoryItem, 'id' | 'created_at'>) => {
+    const newHistoryItem: EmailHistoryItem = {
+      ...newItem,
+      id: Date.now(),
+      created_at: new Date().toISOString()
+    };
+    const updated = [newHistoryItem, ...history];
+    saveHistoryLocally(updated);
+    return newHistoryItem.id;
+  };
+
+  const handleUpdateDraft = (id: number, updates: Partial<EmailHistoryItem>) => {
+    const updated = history.map(item => item.id === id ? { ...item, ...updates } : item);
+    saveHistoryLocally(updated);
   };
 
   const handleLoadDraft = (item: EmailHistoryItem) => {
@@ -168,16 +86,12 @@ export default function Home() {
     setActiveTab('generator');
   };
 
-  // 1. Theme Synced to DOM
+  // Force Light Mode
   useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  }, [darkMode]);
+    document.documentElement.classList.remove('dark');
+  }, []);
 
-  // 2. Load settings and auth from localStorage on mount
+  // Load settings and history from localStorage on mount
   useEffect(() => {
     // Load API settings
     const storedSettings = localStorage.getItem('smartmail_settings');
@@ -196,30 +110,16 @@ export default function Home() {
       }
     }
 
-    // Load Token & Auth info
-    const storedToken = localStorage.getItem('smartmail_token');
-    if (storedToken) {
-      setTimeout(() => {
-        setToken(storedToken);
-        fetchUserData(storedToken);
-      }, 0);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    loadHistoryLocally();
   }, []);
 
   return (
-    <div className="min-h-screen flex bg-zinc-50 dark:bg-[#09090b] text-zinc-950 dark:text-zinc-50 transition-colors duration-300">
+    <div className="min-h-screen flex bg-zinc-50 text-zinc-950 transition-colors duration-300">
       
       {/* Sidebar Navigation */}
       <Sidebar
         activeTab={activeTab}
         setActiveTab={setActiveTab}
-        token={token}
-        email={userEmail}
-        onLoginClick={() => setAuthModalOpen(true)}
-        onLogout={handleLogout}
-        darkMode={darkMode}
-        setDarkMode={setDarkMode}
       />
 
       {/* Main Panel Content Area */}
@@ -232,20 +132,19 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           {activeTab === 'generator' && (
             <EmailWorkspace
-              token={token}
               settings={settings}
               draft={draft}
               setDraft={setDraft}
               onSaveToggle={handleToggleSave}
               onRate={handleRate}
-              refreshHistory={refreshHistory}
+              onAddHistory={handleAddHistory}
+              onUpdateDraft={handleUpdateDraft}
             />
           )}
 
           {activeTab === 'history' && (
             <HistoryTab
               history={history}
-              token={token}
               onLoadDraft={handleLoadDraft}
               onToggleSave={handleToggleSave}
               onRate={handleRate}
@@ -256,7 +155,6 @@ export default function Home() {
           {activeTab === 'starred' && (
             <StarredTab
               history={history}
-              token={token}
               onLoadDraft={handleLoadDraft}
               onToggleSave={handleToggleSave}
               onDelete={handleDelete}
@@ -272,13 +170,6 @@ export default function Home() {
           )}
         </div>
       </main>
-
-      {/* Login / Register Dialog */}
-      <AuthModal
-        isOpen={authModalOpen}
-        onClose={() => setAuthModalOpen(false)}
-        onSuccess={handleLoginSuccess}
-      />
     </div>
   );
 }
