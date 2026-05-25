@@ -1,28 +1,18 @@
 import json
-import google.generativeai as genai
-from openai import OpenAI
+from groq import Groq
 from app.config import settings
 from typing import Dict, Any, List
 
 class AIService:
     @staticmethod
-    def _get_gemini_model(custom_key: str = None):
-        key = custom_key or settings.GEMINI_API_KEY
+    def _get_groq_client(custom_key: str = None):
+        key = custom_key or settings.GROQ_API_KEY
         if not key:
-            raise ValueError("Gemini API key is not configured.")
-        genai.configure(api_key=key)
-        return genai.GenerativeModel(settings.GEMINI_MODEL)
-
-    @staticmethod
-    def _get_openai_client(custom_key: str = None):
-        key = custom_key or settings.OPENAI_API_KEY
-        if not key:
-            raise ValueError("OpenAI API key is not configured.")
-        return OpenAI(api_key=key)
+            raise ValueError("Groq API key is not configured.")
+        return Groq(api_key=key)
 
     @classmethod
     def generate_email(cls, params: Dict[str, Any]) -> Dict[str, Any]:
-        provider = params.get("provider", "gemini")
         category = params.get("category")
         recipient = params.get("recipient") or "the recipient"
         subject_context = params.get("subject") or ""
@@ -57,32 +47,17 @@ class AIService:
         )
 
         try:
-            if provider == "openai" or (not settings.GEMINI_API_KEY and settings.OPENAI_API_KEY and not params.get("user_gemini_key")):
-                # Use OpenAI
-                client = cls._get_openai_client(params.get("user_openai_key"))
-                response = client.chat.completions.create(
-                    model=settings.OPENAI_MODEL,
-                    messages=[
-                        {"role": "system", "content": system_instruction},
-                        {"role": "user", "content": user_content}
-                    ],
-                    response_format={"type": "json_object"},
-                    temperature=0.7
-                )
-                raw_result = response.choices[0].message.content
-            else:
-                # Use Gemini
-                model = cls._get_gemini_model(params.get("user_gemini_key"))
-                # Configure generation to request JSON if model supports it, but standard parsing works too
-                generation_config = genai.GenerationConfig(
-                    response_mime_type="application/json",
-                    temperature=0.7
-                )
-                response = model.generate_content(
-                    f"{system_instruction}\n\n{user_content}",
-                    generation_config=generation_config
-                )
-                raw_result = response.text
+            client = cls._get_groq_client(params.get("user_groq_key"))
+            response = client.chat.completions.create(
+                model=settings.GROQ_MODEL,
+                messages=[
+                    {"role": "system", "content": system_instruction},
+                    {"role": "user", "content": user_content}
+                ],
+                response_format={"type": "json_object"},
+                temperature=0.7
+            )
+            raw_result = response.choices[0].message.content
 
             # Parse JSON
             cleaned_result = raw_result.strip()
@@ -105,7 +80,6 @@ class AIService:
 
     @classmethod
     def improve_prompt(cls, prompt: str, params: Dict[str, Any]) -> str:
-        provider = params.get("provider", "gemini")
         system_instruction = (
             "You are an expert prompt engineer. Your job is to take a simple, short email prompt "
             "and expand it into a detailed, context-rich instruction that covers key details, "
@@ -115,27 +89,21 @@ class AIService:
         )
         
         try:
-            if provider == "openai" or (not settings.GEMINI_API_KEY and settings.OPENAI_API_KEY and not params.get("user_gemini_key")):
-                client = cls._get_openai_client(params.get("user_openai_key"))
-                response = client.chat.completions.create(
-                    model=settings.OPENAI_MODEL,
-                    messages=[
-                        {"role": "system", "content": system_instruction},
-                        {"role": "user", "content": f"Improve this email prompt: '{prompt}'"}
-                    ],
-                    temperature=0.7
-                )
-                return response.choices[0].message.content.strip()
-            else:
-                model = cls._get_gemini_model(params.get("user_gemini_key"))
-                response = model.generate_content(f"{system_instruction}\n\nImprove this email prompt: '{prompt}'")
-                return response.text.strip()
+            client = cls._get_groq_client(params.get("user_groq_key"))
+            response = client.chat.completions.create(
+                model=settings.GROQ_MODEL,
+                messages=[
+                    {"role": "system", "content": system_instruction},
+                    {"role": "user", "content": f"Improve this email prompt: '{prompt}'"}
+                ],
+                temperature=0.7
+            )
+            return response.choices[0].message.content.strip()
         except Exception as e:
             return f"{prompt} (Include standard professional outline, clear call to action, and context details)."
 
     @classmethod
     def rewrite_email(cls, email_content: str, instruction: str, tone: str, length: str, params: Dict[str, Any]) -> Dict[str, Any]:
-        provider = params.get("provider", "gemini")
         system_instruction = (
             "You are an expert editor. Rewrite the email body provided by the user. "
             "You must follow these instructions:\n"
@@ -150,29 +118,17 @@ class AIService:
         )
 
         try:
-            if provider == "openai" or (not settings.GEMINI_API_KEY and settings.OPENAI_API_KEY and not params.get("user_gemini_key")):
-                client = cls._get_openai_client(params.get("user_openai_key"))
-                response = client.chat.completions.create(
-                    model=settings.OPENAI_MODEL,
-                    messages=[
-                        {"role": "system", "content": system_instruction},
-                        {"role": "user", "content": f"Email to rewrite:\n{email_content}"}
-                    ],
-                    response_format={"type": "json_object"},
-                    temperature=0.7
-                )
-                raw_result = response.choices[0].message.content
-            else:
-                model = cls._get_gemini_model(params.get("user_gemini_key"))
-                generation_config = genai.GenerationConfig(
-                    response_mime_type="application/json",
-                    temperature=0.7
-                )
-                response = model.generate_content(
-                    f"{system_instruction}\n\nEmail to rewrite:\n{email_content}",
-                    generation_config=generation_config
-                )
-                raw_result = response.text
+            client = cls._get_groq_client(params.get("user_groq_key"))
+            response = client.chat.completions.create(
+                model=settings.GROQ_MODEL,
+                messages=[
+                    {"role": "system", "content": system_instruction},
+                    {"role": "user", "content": f"Email to rewrite:\n{email_content}"}
+                ],
+                response_format={"type": "json_object"},
+                temperature=0.7
+            )
+            raw_result = response.choices[0].message.content
 
             cleaned_result = raw_result.strip()
             if cleaned_result.startswith("```json"):
@@ -189,34 +145,27 @@ class AIService:
 
     @classmethod
     def summarize_email(cls, email_content: str, params: Dict[str, Any]) -> str:
-        provider = params.get("provider", "gemini")
         system_instruction = (
             "Provide a highly concise, one-sentence summary of the main action items and purpose of this email. "
             "Keep the summary under 30 words. Do not write any intro, outro, or quotes."
         )
 
         try:
-            if provider == "openai" or (not settings.GEMINI_API_KEY and settings.OPENAI_API_KEY and not params.get("user_gemini_key")):
-                client = cls._get_openai_client(params.get("user_openai_key"))
-                response = client.chat.completions.create(
-                    model=settings.OPENAI_MODEL,
-                    messages=[
-                        {"role": "system", "content": system_instruction},
-                        {"role": "user", "content": f"Email to summarize:\n{email_content}"}
-                    ],
-                    temperature=0.5
-                )
-                return response.choices[0].message.content.strip()
-            else:
-                model = cls._get_gemini_model(params.get("user_gemini_key"))
-                response = model.generate_content(f"{system_instruction}\n\nEmail to summarize:\n{email_content}")
-                return response.text.strip()
+            client = cls._get_groq_client(params.get("user_groq_key"))
+            response = client.chat.completions.create(
+                model=settings.GROQ_MODEL,
+                messages=[
+                    {"role": "system", "content": system_instruction},
+                    {"role": "user", "content": f"Email to summarize:\n{email_content}"}
+                ],
+                temperature=0.5
+            )
+            return response.choices[0].message.content.strip()
         except Exception as e:
             return f"Error creating summary: {str(e)}"
 
     @classmethod
     def score_email(cls, email_content: str, params: Dict[str, Any]) -> Dict[str, Any]:
-        provider = params.get("provider", "gemini")
         system_instruction = (
             "Analyze the following email body for grammar, spam likelihood, and clarity. "
             "You must output ONLY a valid JSON object. Do not include markdown code block syntax. "
@@ -228,29 +177,17 @@ class AIService:
         )
 
         try:
-            if provider == "openai" or (not settings.GEMINI_API_KEY and settings.OPENAI_API_KEY and not params.get("user_gemini_key")):
-                client = cls._get_openai_client(params.get("user_openai_key"))
-                response = client.chat.completions.create(
-                    model=settings.OPENAI_MODEL,
-                    messages=[
-                        {"role": "system", "content": system_instruction},
-                        {"role": "user", "content": f"Email to score:\n{email_content}"}
-                    ],
-                    response_format={"type": "json_object"},
-                    temperature=0.5
-                )
-                raw_result = response.choices[0].message.content
-            else:
-                model = cls._get_gemini_model(params.get("user_gemini_key"))
-                generation_config = genai.GenerationConfig(
-                    response_mime_type="application/json",
-                    temperature=0.5
-                )
-                response = model.generate_content(
-                    f"{system_instruction}\n\nEmail to score:\n{email_content}",
-                    generation_config=generation_config
-                )
-                raw_result = response.text
+            client = cls._get_groq_client(params.get("user_groq_key"))
+            response = client.chat.completions.create(
+                model=settings.GROQ_MODEL,
+                messages=[
+                    {"role": "system", "content": system_instruction},
+                    {"role": "user", "content": f"Email to score:\n{email_content}"}
+                ],
+                response_format={"type": "json_object"},
+                temperature=0.5
+            )
+            raw_result = response.choices[0].message.content
 
             cleaned_result = raw_result.strip()
             if cleaned_result.startswith("```json"):

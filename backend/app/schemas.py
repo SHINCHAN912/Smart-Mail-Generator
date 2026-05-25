@@ -40,9 +40,8 @@ class EmailGenerateRequest(BaseModel):
     language: str = Field("English", description="Language of the generated email")
     
     # Allows users to use their own keys if configured
-    user_gemini_key: Optional[str] = None
-    user_openai_key: Optional[str] = None
-    provider: Optional[str] = Field("gemini", description="gemini or openai")
+    user_groq_key: Optional[str] = None
+    provider: Optional[str] = Field("groq", description="groq")
 
 class EmailGenerateResponse(BaseModel):
     subject: str
@@ -53,9 +52,8 @@ class EmailGenerateResponse(BaseModel):
 
 class EmailImprovePromptRequest(BaseModel):
     prompt: str
-    user_gemini_key: Optional[str] = None
-    user_openai_key: Optional[str] = None
-    provider: Optional[str] = "gemini"
+    user_groq_key: Optional[str] = None
+    provider: Optional[str] = "groq"
 
 class EmailImprovePromptResponse(BaseModel):
     improved_prompt: str
@@ -65,9 +63,8 @@ class EmailRewriteRequest(BaseModel):
     instruction: str = Field(..., description="Instruction on how to rewrite: e.g., 'Make it more formal', 'Shorten it', etc.")
     tone: Optional[str] = None
     length: Optional[str] = None
-    user_gemini_key: Optional[str] = None
-    user_openai_key: Optional[str] = None
-    provider: Optional[str] = "gemini"
+    user_groq_key: Optional[str] = None
+    provider: Optional[str] = "groq"
 
 class EmailRewriteResponse(BaseModel):
     subject: Optional[str] = None
@@ -75,18 +72,16 @@ class EmailRewriteResponse(BaseModel):
 
 class EmailSummarizeRequest(BaseModel):
     email_content: str
-    user_gemini_key: Optional[str] = None
-    user_openai_key: Optional[str] = None
-    provider: Optional[str] = "gemini"
+    user_groq_key: Optional[str] = None
+    provider: Optional[str] = "groq"
 
 class EmailSummarizeResponse(BaseModel):
     summary: str
 
 class EmailScoreRequest(BaseModel):
     email_content: str
-    user_gemini_key: Optional[str] = None
-    user_openai_key: Optional[str] = None
-    provider: Optional[str] = "gemini"
+    user_groq_key: Optional[str] = None
+    provider: Optional[str] = "groq"
 
 class EmailScoreResponse(BaseModel):
     score_grammar: int

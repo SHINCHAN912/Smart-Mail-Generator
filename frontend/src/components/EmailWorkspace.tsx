@@ -46,7 +46,7 @@ export default function EmailWorkspace({
     tone: 'Professional',
     length: 'Medium',
     language: 'English',
-    provider: settings.provider,
+    provider: 'groq',
   });
 
   // Action states
@@ -100,9 +100,8 @@ export default function EmailWorkspace({
         },
         body: JSON.stringify({
           ...config,
-          provider: settings.provider,
-          user_gemini_key: settings.user_gemini_key || null,
-          user_openai_key: settings.user_openai_key || null,
+          provider: 'groq',
+          user_groq_key: settings.user_groq_key || null,
         }),
       });
 
@@ -147,9 +146,8 @@ export default function EmailWorkspace({
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           prompt: config.prompt,
-          user_gemini_key: settings.user_gemini_key || null,
-          user_openai_key: settings.user_openai_key || null,
-          provider: settings.provider,
+          user_groq_key: settings.user_groq_key || null,
+          provider: 'groq',
         }),
       });
 
@@ -177,9 +175,8 @@ export default function EmailWorkspace({
           instruction: rewriteInstruction,
           tone: config.tone,
           length: config.length,
-          user_gemini_key: settings.user_gemini_key || null,
-          user_openai_key: settings.user_openai_key || null,
-          provider: settings.provider,
+          user_groq_key: settings.user_groq_key || null,
+          provider: 'groq',
         }),
       });
 
@@ -209,9 +206,8 @@ export default function EmailWorkspace({
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           email_content: draft.content,
-          user_gemini_key: settings.user_gemini_key || null,
-          user_openai_key: settings.user_openai_key || null,
-          provider: settings.provider,
+          user_groq_key: settings.user_groq_key || null,
+          provider: 'groq',
         }),
       });
 

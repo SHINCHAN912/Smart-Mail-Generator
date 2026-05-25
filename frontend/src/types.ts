@@ -17,7 +17,7 @@ export interface EmailConfig {
   tone: string;
   length: string;
   language: string;
-  provider: 'gemini' | 'openai';
+  provider: 'groq';
 }
 
 export interface EmailDraft {
@@ -51,9 +51,8 @@ export interface EmailHistoryItem {
 }
 
 export interface AppSettings {
-  provider: 'gemini' | 'openai';
-  user_gemini_key: string;
-  user_openai_key: string;
+  provider: 'groq';
+  user_groq_key: string;
 }
 
 export interface ScoreResponse {

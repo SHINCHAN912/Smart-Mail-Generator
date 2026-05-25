@@ -10,12 +10,10 @@ class Settings(BaseSettings):
     ACCESS_TOKEN_EXPIRE_MINUTES: int = Field(default=1440, validation_alias="ACCESS_TOKEN_EXPIRE_MINUTES") # 24 hours
     
     # AI Keys
-    GEMINI_API_KEY: str = Field(default="", validation_alias="GEMINI_API_KEY")
-    OPENAI_API_KEY: str = Field(default="", validation_alias="OPENAI_API_KEY")
+    GROQ_API_KEY: str = Field(default="", validation_alias="GROQ_API_KEY")
     
     # Models
-    GEMINI_MODEL: str = Field(default="gemini-1.5-flash", validation_alias="GEMINI_MODEL")
-    OPENAI_MODEL: str = Field(default="gpt-4o-mini", validation_alias="OPENAI_MODEL")
+    GROQ_MODEL: str = Field(default="llama-3.3-70b-versatile", validation_alias="GROQ_MODEL")
     
     # CORS
     CORS_ORIGINS: List[str] = ["http://localhost:3000", "http://localhost:3001"]

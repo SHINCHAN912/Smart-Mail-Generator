@@ -506,20 +506,11 @@
         "documentation": {}
     },
     {
-        "label": "google.generativeai",
-        "kind": 6,
+        "label": "Groq",
+        "importPath": "groq",
+        "description": "groq",
         "isExtraImport": true,
-        "importPath": "google.generativeai",
-        "description": "google.generativeai",
-        "detail": "google.generativeai",
-        "documentation": {}
-    },
-    {
-        "label": "OpenAI",
-        "importPath": "openai",
-        "description": "openai",
-        "isExtraImport": true,
-        "detail": "openai",
+        "detail": "groq",
         "documentation": {}
     },
     {
@@ -887,7 +878,7 @@
         "kind": 6,
         "importPath": "backend.app.services.ai_service",
         "description": "backend.app.services.ai_service",
-        "peekOfCode": "class AIService:\n    @staticmethod\n    def _get_gemini_model(custom_key: str = None):\n        key = custom_key or settings.GEMINI_API_KEY\n        if not key:\n            raise ValueError(\"Gemini API key is not configured.\")\n        genai.configure(api_key=key)\n        return genai.GenerativeModel(settings.GEMINI_MODEL)\n    @staticmethod\n    def _get_openai_client(custom_key: str = None):",
+        "peekOfCode": "class AIService:\n    @staticmethod\n    def _get_groq_client(custom_key: str = None):\n        key = custom_key or settings.GROQ_API_KEY\n        if not key:\n            raise ValueError(\"Groq API key is not configured.\")\n        return Groq(api_key=key)\n    @classmethod\n    def generate_email(cls, params: Dict[str, Any]) -> Dict[str, Any]:\n        category = params.get(\"category\")",
         "detail": "backend.app.services.ai_service",
         "documentation": {}
     },
@@ -896,7 +887,7 @@
         "kind": 6,
         "importPath": "backend.app.config",
         "description": "backend.app.config",
-        "peekOfCode": "class Settings(BaseSettings):\n    DATABASE_URL: str = Field(default=\"sqlite:///./emails.db\", validation_alias=\"DATABASE_URL\")\n    JWT_SECRET: str = Field(default=\"super-secret-key-smartmail-ai-change-in-production\", validation_alias=\"JWT_SECRET\")\n    JWT_ALGORITHM: str = Field(default=\"HS256\", validation_alias=\"JWT_ALGORITHM\")\n    ACCESS_TOKEN_EXPIRE_MINUTES: int = Field(default=1440, validation_alias=\"ACCESS_TOKEN_EXPIRE_MINUTES\") # 24 hours\n    # AI Keys\n    GEMINI_API_KEY: str = Field(default=\"\", validation_alias=\"GEMINI_API_KEY\")\n    OPENAI_API_KEY: str = Field(default=\"\", validation_alias=\"OPENAI_API_KEY\")\n    # Models\n    GEMINI_MODEL: str = Field(default=\"gemini-1.5-flash\", validation_alias=\"GEMINI_MODEL\")",
+        "peekOfCode": "class Settings(BaseSettings):\n    DATABASE_URL: str = Field(default=\"sqlite:///./emails.db\", validation_alias=\"DATABASE_URL\")\n    JWT_SECRET: str = Field(default=\"super-secret-key-smartmail-ai-change-in-production\", validation_alias=\"JWT_SECRET\")\n    JWT_ALGORITHM: str = Field(default=\"HS256\", validation_alias=\"JWT_ALGORITHM\")\n    ACCESS_TOKEN_EXPIRE_MINUTES: int = Field(default=1440, validation_alias=\"ACCESS_TOKEN_EXPIRE_MINUTES\") # 24 hours\n    # AI Keys\n    GROQ_API_KEY: str = Field(default=\"\", validation_alias=\"GROQ_API_KEY\")\n    # Models\n    GROQ_MODEL: str = Field(default=\"llama-3.3-70b-versatile\", validation_alias=\"GROQ_MODEL\")\n    # CORS",
         "detail": "backend.app.config",
         "documentation": {}
     },
@@ -1040,7 +1031,7 @@
         "kind": 6,
         "importPath": "backend.app.schemas",
         "description": "backend.app.schemas",
-        "peekOfCode": "class EmailGenerateRequest(BaseModel):\n    category: str = Field(..., description=\"e.g., Professional, Leave Request, Cold Email, etc.\")\n    recipient: Optional[str] = Field(None, description=\"Name of the recipient\")\n    subject: Optional[str] = Field(None, description=\"Brief context or custom subject line\")\n    prompt: str = Field(..., description=\"What the user wants to say in the email\")\n    tone: str = Field(\"Professional\", description=\"e.g., Professional, Friendly, Formal, Casual, etc.\")\n    length: str = Field(\"Medium\", description=\"Short, Medium, or Long\")\n    language: str = Field(\"English\", description=\"Language of the generated email\")\n    # Allows users to use their own keys if configured\n    user_gemini_key: Optional[str] = None",
+        "peekOfCode": "class EmailGenerateRequest(BaseModel):\n    category: str = Field(..., description=\"e.g., Professional, Leave Request, Cold Email, etc.\")\n    recipient: Optional[str] = Field(None, description=\"Name of the recipient\")\n    subject: Optional[str] = Field(None, description=\"Brief context or custom subject line\")\n    prompt: str = Field(..., description=\"What the user wants to say in the email\")\n    tone: str = Field(\"Professional\", description=\"e.g., Professional, Friendly, Formal, Casual, etc.\")\n    length: str = Field(\"Medium\", description=\"Short, Medium, or Long\")\n    language: str = Field(\"English\", description=\"Language of the generated email\")\n    # Allows users to use their own keys if configured\n    user_groq_key: Optional[str] = None",
         "detail": "backend.app.schemas",
         "documentation": {}
     },
@@ -1049,7 +1040,7 @@
         "kind": 6,
         "importPath": "backend.app.schemas",
         "description": "backend.app.schemas",
-        "peekOfCode": "class EmailGenerateResponse(BaseModel):\n    subject: str\n    content: str\n    score_grammar: int\n    score_spam: int\n    score_clarity: int\nclass EmailImprovePromptRequest(BaseModel):\n    prompt: str\n    user_gemini_key: Optional[str] = None\n    user_openai_key: Optional[str] = None",
+        "peekOfCode": "class EmailGenerateResponse(BaseModel):\n    subject: str\n    content: str\n    score_grammar: int\n    score_spam: int\n    score_clarity: int\nclass EmailImprovePromptRequest(BaseModel):\n    prompt: str\n    user_groq_key: Optional[str] = None\n    provider: Optional[str] = \"groq\"",
         "detail": "backend.app.schemas",
         "documentation": {}
     },
@@ -1058,7 +1049,7 @@
         "kind": 6,
         "importPath": "backend.app.schemas",
         "description": "backend.app.schemas",
-        "peekOfCode": "class EmailImprovePromptRequest(BaseModel):\n    prompt: str\n    user_gemini_key: Optional[str] = None\n    user_openai_key: Optional[str] = None\n    provider: Optional[str] = \"gemini\"\nclass EmailImprovePromptResponse(BaseModel):\n    improved_prompt: str\nclass EmailRewriteRequest(BaseModel):\n    email_content: str\n    instruction: str = Field(..., description=\"Instruction on how to rewrite: e.g., 'Make it more formal', 'Shorten it', etc.\")",
+        "peekOfCode": "class EmailImprovePromptRequest(BaseModel):\n    prompt: str\n    user_groq_key: Optional[str] = None\n    provider: Optional[str] = \"groq\"\nclass EmailImprovePromptResponse(BaseModel):\n    improved_prompt: str\nclass EmailRewriteRequest(BaseModel):\n    email_content: str\n    instruction: str = Field(..., description=\"Instruction on how to rewrite: e.g., 'Make it more formal', 'Shorten it', etc.\")\n    tone: Optional[str] = None",
         "detail": "backend.app.schemas",
         "documentation": {}
     },
@@ -1067,7 +1058,7 @@
         "kind": 6,
         "importPath": "backend.app.schemas",
         "description": "backend.app.schemas",
-        "peekOfCode": "class EmailImprovePromptResponse(BaseModel):\n    improved_prompt: str\nclass EmailRewriteRequest(BaseModel):\n    email_content: str\n    instruction: str = Field(..., description=\"Instruction on how to rewrite: e.g., 'Make it more formal', 'Shorten it', etc.\")\n    tone: Optional[str] = None\n    length: Optional[str] = None\n    user_gemini_key: Optional[str] = None\n    user_openai_key: Optional[str] = None\n    provider: Optional[str] = \"gemini\"",
+        "peekOfCode": "class EmailImprovePromptResponse(BaseModel):\n    improved_prompt: str\nclass EmailRewriteRequest(BaseModel):\n    email_content: str\n    instruction: str = Field(..., description=\"Instruction on how to rewrite: e.g., 'Make it more formal', 'Shorten it', etc.\")\n    tone: Optional[str] = None\n    length: Optional[str] = None\n    user_groq_key: Optional[str] = None\n    provider: Optional[str] = \"groq\"\nclass EmailRewriteResponse(BaseModel):",
         "detail": "backend.app.schemas",
         "documentation": {}
     },
@@ -1076,7 +1067,7 @@
         "kind": 6,
         "importPath": "backend.app.schemas",
         "description": "backend.app.schemas",
-        "peekOfCode": "class EmailRewriteRequest(BaseModel):\n    email_content: str\n    instruction: str = Field(..., description=\"Instruction on how to rewrite: e.g., 'Make it more formal', 'Shorten it', etc.\")\n    tone: Optional[str] = None\n    length: Optional[str] = None\n    user_gemini_key: Optional[str] = None\n    user_openai_key: Optional[str] = None\n    provider: Optional[str] = \"gemini\"\nclass EmailRewriteResponse(BaseModel):\n    subject: Optional[str] = None",
+        "peekOfCode": "class EmailRewriteRequest(BaseModel):\n    email_content: str\n    instruction: str = Field(..., description=\"Instruction on how to rewrite: e.g., 'Make it more formal', 'Shorten it', etc.\")\n    tone: Optional[str] = None\n    length: Optional[str] = None\n    user_groq_key: Optional[str] = None\n    provider: Optional[str] = \"groq\"\nclass EmailRewriteResponse(BaseModel):\n    subject: Optional[str] = None\n    content: str",
         "detail": "backend.app.schemas",
         "documentation": {}
     },
@@ -1085,7 +1076,7 @@
         "kind": 6,
         "importPath": "backend.app.schemas",
         "description": "backend.app.schemas",
-        "peekOfCode": "class EmailRewriteResponse(BaseModel):\n    subject: Optional[str] = None\n    content: str\nclass EmailSummarizeRequest(BaseModel):\n    email_content: str\n    user_gemini_key: Optional[str] = None\n    user_openai_key: Optional[str] = None\n    provider: Optional[str] = \"gemini\"\nclass EmailSummarizeResponse(BaseModel):\n    summary: str",
+        "peekOfCode": "class EmailRewriteResponse(BaseModel):\n    subject: Optional[str] = None\n    content: str\nclass EmailSummarizeRequest(BaseModel):\n    email_content: str\n    user_groq_key: Optional[str] = None\n    provider: Optional[str] = \"groq\"\nclass EmailSummarizeResponse(BaseModel):\n    summary: str\nclass EmailScoreRequest(BaseModel):",
         "detail": "backend.app.schemas",
         "documentation": {}
     },
@@ -1094,7 +1085,7 @@
         "kind": 6,
         "importPath": "backend.app.schemas",
         "description": "backend.app.schemas",
-        "peekOfCode": "class EmailSummarizeRequest(BaseModel):\n    email_content: str\n    user_gemini_key: Optional[str] = None\n    user_openai_key: Optional[str] = None\n    provider: Optional[str] = \"gemini\"\nclass EmailSummarizeResponse(BaseModel):\n    summary: str\nclass EmailScoreRequest(BaseModel):\n    email_content: str\n    user_gemini_key: Optional[str] = None",
+        "peekOfCode": "class EmailSummarizeRequest(BaseModel):\n    email_content: str\n    user_groq_key: Optional[str] = None\n    provider: Optional[str] = \"groq\"\nclass EmailSummarizeResponse(BaseModel):\n    summary: str\nclass EmailScoreRequest(BaseModel):\n    email_content: str\n    user_groq_key: Optional[str] = None\n    provider: Optional[str] = \"groq\"",
         "detail": "backend.app.schemas",
         "documentation": {}
     },
@@ -1103,7 +1094,7 @@
         "kind": 6,
         "importPath": "backend.app.schemas",
         "description": "backend.app.schemas",
-        "peekOfCode": "class EmailSummarizeResponse(BaseModel):\n    summary: str\nclass EmailScoreRequest(BaseModel):\n    email_content: str\n    user_gemini_key: Optional[str] = None\n    user_openai_key: Optional[str] = None\n    provider: Optional[str] = \"gemini\"\nclass EmailScoreResponse(BaseModel):\n    score_grammar: int\n    score_spam: int",
+        "peekOfCode": "class EmailSummarizeResponse(BaseModel):\n    summary: str\nclass EmailScoreRequest(BaseModel):\n    email_content: str\n    user_groq_key: Optional[str] = None\n    provider: Optional[str] = \"groq\"\nclass EmailScoreResponse(BaseModel):\n    score_grammar: int\n    score_spam: int\n    score_clarity: int",
         "detail": "backend.app.schemas",
         "documentation": {}
     },
@@ -1112,7 +1103,7 @@
         "kind": 6,
         "importPath": "backend.app.schemas",
         "description": "backend.app.schemas",
-        "peekOfCode": "class EmailScoreRequest(BaseModel):\n    email_content: str\n    user_gemini_key: Optional[str] = None\n    user_openai_key: Optional[str] = None\n    provider: Optional[str] = \"gemini\"\nclass EmailScoreResponse(BaseModel):\n    score_grammar: int\n    score_spam: int\n    score_clarity: int\n    suggestions: List[str]",
+        "peekOfCode": "class EmailScoreRequest(BaseModel):\n    email_content: str\n    user_groq_key: Optional[str] = None\n    provider: Optional[str] = \"groq\"\nclass EmailScoreResponse(BaseModel):\n    score_grammar: int\n    score_spam: int\n    score_clarity: int\n    suggestions: List[str]\nclass EmailSaveRequest(BaseModel):",
         "detail": "backend.app.schemas",
         "documentation": {}
     },

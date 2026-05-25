@@ -10,18 +10,15 @@ interface SettingsTabProps {
 }
 
 export default function SettingsTab({ settings, setSettings }: SettingsTabProps) {
-  const [provider, setProvider] = useState<'gemini' | 'openai'>(settings.provider);
-  const [geminiKey, setGeminiKey] = useState(settings.user_gemini_key);
-  const [openaiKey, setOpenaiKey] = useState(settings.user_openai_key);
+  const [provider] = useState<'groq'>('groq');
+  const [groqKey, setGroqKey] = useState(settings.user_groq_key);
   const [saved, setSaved] = useState(false);
-
 
   const handleSave = (e: React.FormEvent) => {
     e.preventDefault();
     const updatedSettings: AppSettings = {
       provider,
-      user_gemini_key: geminiKey,
-      user_openai_key: openaiKey,
+      user_groq_key: groqKey,
     };
     
     // Save to localStorage
@@ -70,102 +67,42 @@ export default function SettingsTab({ settings, setSettings }: SettingsTabProps)
           <h3 className="text-sm font-semibold text-zinc-800 dark:text-zinc-200">
             Preferred AI Copywriter
           </h3>
-          <div className="grid grid-cols-2 gap-4">
-            {/* Gemini Option */}
-            <label className={`flex flex-col p-4 rounded-xl border-2 transition cursor-pointer ${
-              provider === 'gemini'
-                ? 'border-indigo-500 bg-indigo-500/5 dark:bg-indigo-500/10'
-                : 'border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 bg-zinc-50/30 dark:bg-zinc-900/30'
-            }`}>
-              <input
-                type="radio"
-                name="provider"
-                value="gemini"
-                checked={provider === 'gemini'}
-                onChange={() => setProvider('gemini')}
-                className="sr-only"
-              />
+          <div className="grid grid-cols-1 gap-4">
+            <div className="flex flex-col p-4 rounded-xl border-2 border-indigo-500 bg-indigo-500/5 dark:bg-indigo-500/10 transition cursor-default">
               <div className="flex items-center justify-between">
-                <span className="text-sm font-bold text-zinc-900 dark:text-zinc-50">Google Gemini</span>
-                {provider === 'gemini' && <Sparkles className="w-4 h-4 text-indigo-500" />}
+                <span className="text-sm font-bold text-zinc-900 dark:text-zinc-50">Groq Cloud (Llama 3.3 70B)</span>
+                <Sparkles className="w-4 h-4 text-indigo-500 animate-pulse" />
               </div>
               <span className="text-[10px] text-zinc-400 mt-1 leading-normal">
-                Default. Very fast, expressive, and optimized for general copy. Fits all structures.
+                Active. Powered by Meta Llama 3.3 70B Versatile model. Incredibly fast, high-quality, and expressive email copywriting.
               </span>
-            </label>
-
-            {/* OpenAI Option */}
-            <label className={`flex flex-col p-4 rounded-xl border-2 transition cursor-pointer ${
-              provider === 'openai'
-                ? 'border-indigo-500 bg-indigo-500/5 dark:bg-indigo-500/10'
-                : 'border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 bg-zinc-50/30 dark:bg-zinc-900/30'
-            }`}>
-              <input
-                type="radio"
-                name="provider"
-                value="openai"
-                checked={provider === 'openai'}
-                onChange={() => setProvider('openai')}
-                className="sr-only"
-              />
-              <div className="flex items-center justify-between">
-                <span className="text-sm font-bold text-zinc-900 dark:text-zinc-50">OpenAI GPT</span>
-                {provider === 'openai' && <Sparkles className="w-4 h-4 text-indigo-500" />}
-              </div>
-              <span className="text-[10px] text-zinc-400 mt-1 leading-normal">
-                Requires custom API key. Known for structured prompts, logic, and analytical tone.
-              </span>
-            </label>
+            </div>
           </div>
         </div>
 
         {/* API Key Inputs */}
         <div className="space-y-4 pt-4 border-t border-zinc-200/50 dark:border-zinc-800/50">
           
-          {/* Gemini API Key */}
+          {/* Groq API Key */}
           <div className="space-y-1.5">
             <div className="flex items-center justify-between">
               <label className="text-xs font-semibold text-zinc-500 dark:text-zinc-400">
-                Google Gemini API Key
+                Groq API Key
               </label>
               <a 
-                href="https://aistudio.google.com/" 
+                href="https://console.groq.com/keys" 
                 target="_blank" 
                 rel="noreferrer"
                 className="text-[10px] font-semibold text-indigo-500 hover:underline"
               >
-                Get Gemini Key
+                Get Groq Key
               </a>
             </div>
             <input
               type="password"
-              value={geminiKey}
-              onChange={(e) => setGeminiKey(e.target.value)}
-              placeholder={provider === 'gemini' ? "Required if backend key not set" : "Optional"}
-              className="w-full px-4 py-2 text-sm rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-950/50 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition font-mono"
-            />
-          </div>
-
-          {/* OpenAI API Key */}
-          <div className="space-y-1.5">
-            <div className="flex items-center justify-between">
-              <label className="text-xs font-semibold text-zinc-500 dark:text-zinc-400">
-                OpenAI API Key
-              </label>
-              <a 
-                href="https://platform.openai.com/api-keys" 
-                target="_blank" 
-                rel="noreferrer"
-                className="text-[10px] font-semibold text-indigo-500 hover:underline"
-              >
-                Get OpenAI Key
-              </a>
-            </div>
-            <input
-              type="password"
-              value={openaiKey}
-              onChange={(e) => setOpenaiKey(e.target.value)}
-              placeholder={provider === 'openai' ? "Required if backend key not set" : "Optional"}
+              value={groqKey}
+              onChange={(e) => setGroqKey(e.target.value)}
+              placeholder="Required if backend key not set"
               className="w-full px-4 py-2 text-sm rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-950/50 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition font-mono"
             />
           </div>

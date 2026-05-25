@@ -21,9 +21,8 @@ export default function Home() {
 
   // Application Data States
   const [settings, setSettings] = useState<AppSettings>({
-    provider: 'gemini',
-    user_gemini_key: '',
-    user_openai_key: '',
+    provider: 'groq',
+    user_groq_key: '',
   });
   const [draft, setDraft] = useState<EmailDraft | null>(null);
   const [history, setHistory] = useState<EmailHistoryItem[]>([]);
@@ -185,8 +184,12 @@ export default function Home() {
     if (storedSettings) {
       try {
         const parsed = JSON.parse(storedSettings);
+        const sanitized: AppSettings = {
+          provider: 'groq',
+          user_groq_key: parsed.user_groq_key || parsed.user_gemini_key || parsed.user_openai_key || '',
+        };
         setTimeout(() => {
-          setSettings(parsed);
+          setSettings(sanitized);
         }, 0);
       } catch (e) {
         console.error('Error parsing settings', e);
@@ -262,7 +265,7 @@ export default function Home() {
 
           {activeTab === 'settings' && (
             <SettingsTab
-              key={`${settings.provider}-${settings.user_gemini_key}-${settings.user_openai_key}`}
+              key={`${settings.provider}-${settings.user_groq_key}`}
               settings={settings}
               setSettings={setSettings}
             />

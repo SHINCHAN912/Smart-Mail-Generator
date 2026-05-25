@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "SmartMail AI - Intelligent AI Email Generator & Copywriter",
-  description: "Compose high-quality, professional, and personalized emails in seconds using Google Gemini and OpenAI. Review grammar accuracy, spam scores, readability metrics, and rewrite text in real-time.",
+  description: "Compose high-quality, professional, and personalized emails in seconds using Groq Cloud and Meta Llama 3.3. Review grammar accuracy, spam scores, readability metrics, and rewrite text in real-time.",
 };
 
 export default function RootLayout({
