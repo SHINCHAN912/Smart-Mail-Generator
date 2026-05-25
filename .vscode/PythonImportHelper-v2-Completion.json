@@ -1,0 +1,1191 @@
+[
+    {
+        "label": "datetime",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "datetime",
+        "description": "datetime",
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "APIRouter",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Depends",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "APIRouter",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Depends",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "OAuth2PasswordBearer",
+        "importPath": "fastapi.security",
+        "description": "fastapi.security",
+        "isExtraImport": true,
+        "detail": "fastapi.security",
+        "documentation": {}
+    },
+    {
+        "label": "OAuth2PasswordBearer",
+        "importPath": "fastapi.security",
+        "description": "fastapi.security",
+        "isExtraImport": true,
+        "detail": "fastapi.security",
+        "documentation": {}
+    },
+    {
+        "label": "JWTError",
+        "importPath": "jose",
+        "description": "jose",
+        "isExtraImport": true,
+        "detail": "jose",
+        "documentation": {}
+    },
+    {
+        "label": "jwt",
+        "importPath": "jose",
+        "description": "jose",
+        "isExtraImport": true,
+        "detail": "jose",
+        "documentation": {}
+    },
+    {
+        "label": "JWTError",
+        "importPath": "jose",
+        "description": "jose",
+        "isExtraImport": true,
+        "detail": "jose",
+        "documentation": {}
+    },
+    {
+        "label": "jwt",
+        "importPath": "jose",
+        "description": "jose",
+        "isExtraImport": true,
+        "detail": "jose",
+        "documentation": {}
+    },
+    {
+        "label": "CryptContext",
+        "importPath": "passlib.context",
+        "description": "passlib.context",
+        "isExtraImport": true,
+        "detail": "passlib.context",
+        "documentation": {}
+    },
+    {
+        "label": "Session",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "Session",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "sessionmaker",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "relationship",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "get_db",
+        "importPath": "app.database",
+        "description": "app.database",
+        "isExtraImport": true,
+        "detail": "app.database",
+        "documentation": {}
+    },
+    {
+        "label": "get_db",
+        "importPath": "app.database",
+        "description": "app.database",
+        "isExtraImport": true,
+        "detail": "app.database",
+        "documentation": {}
+    },
+    {
+        "label": "engine",
+        "importPath": "app.database",
+        "description": "app.database",
+        "isExtraImport": true,
+        "detail": "app.database",
+        "documentation": {}
+    },
+    {
+        "label": "Base",
+        "importPath": "app.database",
+        "description": "app.database",
+        "isExtraImport": true,
+        "detail": "app.database",
+        "documentation": {}
+    },
+    {
+        "label": "Base",
+        "importPath": "app.database",
+        "description": "app.database",
+        "isExtraImport": true,
+        "detail": "app.database",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "app.models",
+        "description": "app.models",
+        "isExtraImport": true,
+        "detail": "app.models",
+        "documentation": {}
+    },
+    {
+        "label": "EmailHistory",
+        "importPath": "app.models",
+        "description": "app.models",
+        "isExtraImport": true,
+        "detail": "app.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "app.models",
+        "description": "app.models",
+        "isExtraImport": true,
+        "detail": "app.models",
+        "documentation": {}
+    },
+    {
+        "label": "UserCreate",
+        "importPath": "app.schemas",
+        "description": "app.schemas",
+        "isExtraImport": true,
+        "detail": "app.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "UserLogin",
+        "importPath": "app.schemas",
+        "description": "app.schemas",
+        "isExtraImport": true,
+        "detail": "app.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "UserResponse",
+        "importPath": "app.schemas",
+        "description": "app.schemas",
+        "isExtraImport": true,
+        "detail": "app.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "Token",
+        "importPath": "app.schemas",
+        "description": "app.schemas",
+        "isExtraImport": true,
+        "detail": "app.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "EmailGenerateRequest",
+        "importPath": "app.schemas",
+        "description": "app.schemas",
+        "isExtraImport": true,
+        "detail": "app.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "EmailGenerateResponse",
+        "importPath": "app.schemas",
+        "description": "app.schemas",
+        "isExtraImport": true,
+        "detail": "app.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "EmailImprovePromptRequest",
+        "importPath": "app.schemas",
+        "description": "app.schemas",
+        "isExtraImport": true,
+        "detail": "app.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "EmailImprovePromptResponse",
+        "importPath": "app.schemas",
+        "description": "app.schemas",
+        "isExtraImport": true,
+        "detail": "app.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "EmailRewriteRequest",
+        "importPath": "app.schemas",
+        "description": "app.schemas",
+        "isExtraImport": true,
+        "detail": "app.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "EmailRewriteResponse",
+        "importPath": "app.schemas",
+        "description": "app.schemas",
+        "isExtraImport": true,
+        "detail": "app.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "EmailSummarizeRequest",
+        "importPath": "app.schemas",
+        "description": "app.schemas",
+        "isExtraImport": true,
+        "detail": "app.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "EmailSummarizeResponse",
+        "importPath": "app.schemas",
+        "description": "app.schemas",
+        "isExtraImport": true,
+        "detail": "app.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "EmailScoreRequest",
+        "importPath": "app.schemas",
+        "description": "app.schemas",
+        "isExtraImport": true,
+        "detail": "app.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "EmailScoreResponse",
+        "importPath": "app.schemas",
+        "description": "app.schemas",
+        "isExtraImport": true,
+        "detail": "app.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "EmailHistoryResponse",
+        "importPath": "app.schemas",
+        "description": "app.schemas",
+        "isExtraImport": true,
+        "detail": "app.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "EmailSaveRequest",
+        "importPath": "app.schemas",
+        "description": "app.schemas",
+        "isExtraImport": true,
+        "detail": "app.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "EmailRateRequest",
+        "importPath": "app.schemas",
+        "description": "app.schemas",
+        "isExtraImport": true,
+        "detail": "app.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "app.config",
+        "description": "app.config",
+        "isExtraImport": true,
+        "detail": "app.config",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "app.config",
+        "description": "app.config",
+        "isExtraImport": true,
+        "detail": "app.config",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "app.config",
+        "description": "app.config",
+        "isExtraImport": true,
+        "detail": "app.config",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "app.config",
+        "description": "app.config",
+        "isExtraImport": true,
+        "detail": "app.config",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "AIService",
+        "importPath": "app.services.ai_service",
+        "description": "app.services.ai_service",
+        "isExtraImport": true,
+        "detail": "app.services.ai_service",
+        "documentation": {}
+    },
+    {
+        "label": "get_optional_current_user",
+        "importPath": "app.routes.auth",
+        "description": "app.routes.auth",
+        "isExtraImport": true,
+        "detail": "app.routes.auth",
+        "documentation": {}
+    },
+    {
+        "label": "get_current_user",
+        "importPath": "app.routes.auth",
+        "description": "app.routes.auth",
+        "isExtraImport": true,
+        "detail": "app.routes.auth",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "google.generativeai",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "google.generativeai",
+        "description": "google.generativeai",
+        "detail": "google.generativeai",
+        "documentation": {}
+    },
+    {
+        "label": "OpenAI",
+        "importPath": "openai",
+        "description": "openai",
+        "isExtraImport": true,
+        "detail": "openai",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "BaseSettings",
+        "importPath": "pydantic_settings",
+        "description": "pydantic_settings",
+        "isExtraImport": true,
+        "detail": "pydantic_settings",
+        "documentation": {}
+    },
+    {
+        "label": "SettingsConfigDict",
+        "importPath": "pydantic_settings",
+        "description": "pydantic_settings",
+        "isExtraImport": true,
+        "detail": "pydantic_settings",
+        "documentation": {}
+    },
+    {
+        "label": "Field",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "EmailStr",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "Field",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "create_engine",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Column",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Integer",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "String",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "DateTime",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "ForeignKey",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Boolean",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Text",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "declarative_base",
+        "importPath": "sqlalchemy.ext.declarative",
+        "description": "sqlalchemy.ext.declarative",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.ext.declarative",
+        "documentation": {}
+    },
+    {
+        "label": "CORSMiddleware",
+        "importPath": "fastapi.middleware.cors",
+        "description": "fastapi.middleware.cors",
+        "isExtraImport": true,
+        "detail": "fastapi.middleware.cors",
+        "documentation": {}
+    },
+    {
+        "label": "auth",
+        "importPath": "app.routes",
+        "description": "app.routes",
+        "isExtraImport": true,
+        "detail": "app.routes",
+        "documentation": {}
+    },
+    {
+        "label": "email",
+        "importPath": "app.routes",
+        "description": "app.routes",
+        "isExtraImport": true,
+        "detail": "app.routes",
+        "documentation": {}
+    },
+    {
+        "label": "verify_password",
+        "kind": 2,
+        "importPath": "backend.app.routes.auth",
+        "description": "backend.app.routes.auth",
+        "peekOfCode": "def verify_password(plain_password, hashed_password):\n    return pwd_context.verify(plain_password, hashed_password)\ndef get_password_hash(password):\n    return pwd_context.hash(password)\ndef create_access_token(data: dict, expires_delta: datetime.timedelta = None):\n    to_encode = data.copy()\n    if expires_delta:\n        expire = datetime.datetime.utcnow() + expires_delta\n    else:\n        expire = datetime.datetime.utcnow() + datetime.timedelta(minutes=settings.ACCESS_TOKEN_EXPIRE_MINUTES)",
+        "detail": "backend.app.routes.auth",
+        "documentation": {}
+    },
+    {
+        "label": "get_password_hash",
+        "kind": 2,
+        "importPath": "backend.app.routes.auth",
+        "description": "backend.app.routes.auth",
+        "peekOfCode": "def get_password_hash(password):\n    return pwd_context.hash(password)\ndef create_access_token(data: dict, expires_delta: datetime.timedelta = None):\n    to_encode = data.copy()\n    if expires_delta:\n        expire = datetime.datetime.utcnow() + expires_delta\n    else:\n        expire = datetime.datetime.utcnow() + datetime.timedelta(minutes=settings.ACCESS_TOKEN_EXPIRE_MINUTES)\n    to_encode.update({\"exp\": expire})\n    encoded_jwt = jwt.encode(to_encode, settings.JWT_SECRET, algorithm=settings.JWT_ALGORITHM)",
+        "detail": "backend.app.routes.auth",
+        "documentation": {}
+    },
+    {
+        "label": "create_access_token",
+        "kind": 2,
+        "importPath": "backend.app.routes.auth",
+        "description": "backend.app.routes.auth",
+        "peekOfCode": "def create_access_token(data: dict, expires_delta: datetime.timedelta = None):\n    to_encode = data.copy()\n    if expires_delta:\n        expire = datetime.datetime.utcnow() + expires_delta\n    else:\n        expire = datetime.datetime.utcnow() + datetime.timedelta(minutes=settings.ACCESS_TOKEN_EXPIRE_MINUTES)\n    to_encode.update({\"exp\": expire})\n    encoded_jwt = jwt.encode(to_encode, settings.JWT_SECRET, algorithm=settings.JWT_ALGORITHM)\n    return encoded_jwt\ndef get_current_user(token: str = Depends(oauth2_scheme), db: Session = Depends(get_db)):",
+        "detail": "backend.app.routes.auth",
+        "documentation": {}
+    },
+    {
+        "label": "get_current_user",
+        "kind": 2,
+        "importPath": "backend.app.routes.auth",
+        "description": "backend.app.routes.auth",
+        "peekOfCode": "def get_current_user(token: str = Depends(oauth2_scheme), db: Session = Depends(get_db)):\n    credentials_exception = HTTPException(\n        status_code=status.HTTP_401_UNAUTHORIZED,\n        detail=\"Could not validate credentials\",\n        headers={\"WWW-Authenticate\": \"Bearer\"},\n    )\n    try:\n        payload = jwt.decode(token, settings.JWT_SECRET, algorithms=[settings.JWT_ALGORITHM])\n        user_id: int = payload.get(\"sub\")\n        if user_id is None:",
+        "detail": "backend.app.routes.auth",
+        "documentation": {}
+    },
+    {
+        "label": "get_optional_current_user",
+        "kind": 2,
+        "importPath": "backend.app.routes.auth",
+        "description": "backend.app.routes.auth",
+        "peekOfCode": "def get_optional_current_user(token: str = Depends(oauth2_scheme_optional), db: Session = Depends(get_db)):\n    try:\n        payload = jwt.decode(token, settings.JWT_SECRET, algorithms=[settings.JWT_ALGORITHM])\n        user_id: int = payload.get(\"sub\")\n        if user_id is not None:\n            return db.query(User).filter(User.id == user_id).first()\n    except (JWTError, Exception):\n        pass\n    return None\n# Endpoints",
+        "detail": "backend.app.routes.auth",
+        "documentation": {}
+    },
+    {
+        "label": "register",
+        "kind": 2,
+        "importPath": "backend.app.routes.auth",
+        "description": "backend.app.routes.auth",
+        "peekOfCode": "def register(user_data: UserCreate, db: Session = Depends(get_db)):\n    # Check if user already exists\n    existing_user = db.query(User).filter(User.email == user_data.email).first()\n    if existing_user:\n        raise HTTPException(\n            status_code=status.HTTP_400_BAD_REQUEST,\n            detail=\"Email already registered\"\n        )\n    hashed_pwd = get_password_hash(user_data.password)\n    new_user = User(email=user_data.email, hashed_password=hashed_pwd)",
+        "detail": "backend.app.routes.auth",
+        "documentation": {}
+    },
+    {
+        "label": "login",
+        "kind": 2,
+        "importPath": "backend.app.routes.auth",
+        "description": "backend.app.routes.auth",
+        "peekOfCode": "def login(user_data: UserLogin, db: Session = Depends(get_db)):\n    user = db.query(User).filter(User.email == user_data.email).first()\n    if not user or not verify_password(user_data.password, user.hashed_password):\n        raise HTTPException(\n            status_code=status.HTTP_401_UNAUTHORIZED,\n            detail=\"Incorrect email or password\",\n            headers={\"WWW-Authenticate\": \"Bearer\"},\n        )\n    access_token = create_access_token(data={\"sub\": user.id})\n    return {\"access_token\": access_token, \"token_type\": \"bearer\"}",
+        "detail": "backend.app.routes.auth",
+        "documentation": {}
+    },
+    {
+        "label": "get_me",
+        "kind": 2,
+        "importPath": "backend.app.routes.auth",
+        "description": "backend.app.routes.auth",
+        "peekOfCode": "def get_me(current_user: User = Depends(get_current_user)):\n    return current_user",
+        "detail": "backend.app.routes.auth",
+        "documentation": {}
+    },
+    {
+        "label": "pwd_context",
+        "kind": 5,
+        "importPath": "backend.app.routes.auth",
+        "description": "backend.app.routes.auth",
+        "peekOfCode": "pwd_context = CryptContext(schemes=[\"bcrypt\"], deprecated=\"auto\")\n# Setup JWT OAuth2 scheme\noauth2_scheme = OAuth2PasswordBearer(tokenUrl=\"api/auth/login-form-submit-fallback\") # we will use JSON login mostly\noauth2_scheme_optional = OAuth2PasswordBearer(tokenUrl=\"api/auth/login-form-submit-fallback\", auto_error=False)\nrouter = APIRouter(prefix=\"/api/auth\", tags=[\"Authentication\"])\ndef verify_password(plain_password, hashed_password):\n    return pwd_context.verify(plain_password, hashed_password)\ndef get_password_hash(password):\n    return pwd_context.hash(password)\ndef create_access_token(data: dict, expires_delta: datetime.timedelta = None):",
+        "detail": "backend.app.routes.auth",
+        "documentation": {}
+    },
+    {
+        "label": "oauth2_scheme",
+        "kind": 5,
+        "importPath": "backend.app.routes.auth",
+        "description": "backend.app.routes.auth",
+        "peekOfCode": "oauth2_scheme = OAuth2PasswordBearer(tokenUrl=\"api/auth/login-form-submit-fallback\") # we will use JSON login mostly\noauth2_scheme_optional = OAuth2PasswordBearer(tokenUrl=\"api/auth/login-form-submit-fallback\", auto_error=False)\nrouter = APIRouter(prefix=\"/api/auth\", tags=[\"Authentication\"])\ndef verify_password(plain_password, hashed_password):\n    return pwd_context.verify(plain_password, hashed_password)\ndef get_password_hash(password):\n    return pwd_context.hash(password)\ndef create_access_token(data: dict, expires_delta: datetime.timedelta = None):\n    to_encode = data.copy()\n    if expires_delta:",
+        "detail": "backend.app.routes.auth",
+        "documentation": {}
+    },
+    {
+        "label": "oauth2_scheme_optional",
+        "kind": 5,
+        "importPath": "backend.app.routes.auth",
+        "description": "backend.app.routes.auth",
+        "peekOfCode": "oauth2_scheme_optional = OAuth2PasswordBearer(tokenUrl=\"api/auth/login-form-submit-fallback\", auto_error=False)\nrouter = APIRouter(prefix=\"/api/auth\", tags=[\"Authentication\"])\ndef verify_password(plain_password, hashed_password):\n    return pwd_context.verify(plain_password, hashed_password)\ndef get_password_hash(password):\n    return pwd_context.hash(password)\ndef create_access_token(data: dict, expires_delta: datetime.timedelta = None):\n    to_encode = data.copy()\n    if expires_delta:\n        expire = datetime.datetime.utcnow() + expires_delta",
+        "detail": "backend.app.routes.auth",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "kind": 5,
+        "importPath": "backend.app.routes.auth",
+        "description": "backend.app.routes.auth",
+        "peekOfCode": "router = APIRouter(prefix=\"/api/auth\", tags=[\"Authentication\"])\ndef verify_password(plain_password, hashed_password):\n    return pwd_context.verify(plain_password, hashed_password)\ndef get_password_hash(password):\n    return pwd_context.hash(password)\ndef create_access_token(data: dict, expires_delta: datetime.timedelta = None):\n    to_encode = data.copy()\n    if expires_delta:\n        expire = datetime.datetime.utcnow() + expires_delta\n    else:",
+        "detail": "backend.app.routes.auth",
+        "documentation": {}
+    },
+    {
+        "label": "generate_email",
+        "kind": 2,
+        "importPath": "backend.app.routes.email",
+        "description": "backend.app.routes.email",
+        "peekOfCode": "def generate_email(\n    request: EmailGenerateRequest,\n    db: Session = Depends(get_db),\n    current_user: Optional[User] = Depends(get_optional_current_user)\n):\n    params = request.model_dump()\n    result = AIService.generate_email(params)\n    # Save to database if user is authenticated\n    if current_user:\n        history_item = EmailHistory(",
+        "detail": "backend.app.routes.email",
+        "documentation": {}
+    },
+    {
+        "label": "improve_prompt",
+        "kind": 2,
+        "importPath": "backend.app.routes.email",
+        "description": "backend.app.routes.email",
+        "peekOfCode": "def improve_prompt(request: EmailImprovePromptRequest):\n    improved = AIService.improve_prompt(request.prompt, request.model_dump())\n    return EmailImprovePromptResponse(improved_prompt=improved)\n@router.post(\"/rewrite\", response_model=EmailRewriteResponse)\ndef rewrite_email(request: EmailRewriteRequest):\n    params = request.model_dump()\n    result = AIService.rewrite_email(\n        email_content=request.email_content,\n        instruction=request.instruction,\n        tone=request.tone,",
+        "detail": "backend.app.routes.email",
+        "documentation": {}
+    },
+    {
+        "label": "rewrite_email",
+        "kind": 2,
+        "importPath": "backend.app.routes.email",
+        "description": "backend.app.routes.email",
+        "peekOfCode": "def rewrite_email(request: EmailRewriteRequest):\n    params = request.model_dump()\n    result = AIService.rewrite_email(\n        email_content=request.email_content,\n        instruction=request.instruction,\n        tone=request.tone,\n        length=request.length,\n        params=params\n    )\n    return EmailRewriteResponse(",
+        "detail": "backend.app.routes.email",
+        "documentation": {}
+    },
+    {
+        "label": "summarize_email",
+        "kind": 2,
+        "importPath": "backend.app.routes.email",
+        "description": "backend.app.routes.email",
+        "peekOfCode": "def summarize_email(request: EmailSummarizeRequest):\n    summary = AIService.summarize_email(request.email_content, request.model_dump())\n    return EmailSummarizeResponse(summary=summary)\n@router.post(\"/score\", response_model=EmailScoreResponse)\ndef score_email(request: EmailScoreRequest):\n    score_details = AIService.score_email(request.email_content, request.model_dump())\n    return EmailScoreResponse(\n        score_grammar=score_details.get(\"score_grammar\", 90),\n        score_spam=score_details.get(\"score_spam\", 10),\n        score_clarity=score_details.get(\"score_clarity\", 90),",
+        "detail": "backend.app.routes.email",
+        "documentation": {}
+    },
+    {
+        "label": "score_email",
+        "kind": 2,
+        "importPath": "backend.app.routes.email",
+        "description": "backend.app.routes.email",
+        "peekOfCode": "def score_email(request: EmailScoreRequest):\n    score_details = AIService.score_email(request.email_content, request.model_dump())\n    return EmailScoreResponse(\n        score_grammar=score_details.get(\"score_grammar\", 90),\n        score_spam=score_details.get(\"score_spam\", 10),\n        score_clarity=score_details.get(\"score_clarity\", 90),\n        suggestions=score_details.get(\"suggestions\", [])\n    )\n# History Endpoints (require authentication)\n@router.get(\"/history\", response_model=List[EmailHistoryResponse])",
+        "detail": "backend.app.routes.email",
+        "documentation": {}
+    },
+    {
+        "label": "get_email_history",
+        "kind": 2,
+        "importPath": "backend.app.routes.email",
+        "description": "backend.app.routes.email",
+        "peekOfCode": "def get_email_history(\n    current_user: User = Depends(get_current_user),\n    db: Session = Depends(get_db)\n):\n    history = (\n        db.query(EmailHistory)\n        .filter(EmailHistory.user_id == current_user.id)\n        .order_by(EmailHistory.created_at.desc())\n        .all()\n    )",
+        "detail": "backend.app.routes.email",
+        "documentation": {}
+    },
+    {
+        "label": "get_saved_emails",
+        "kind": 2,
+        "importPath": "backend.app.routes.email",
+        "description": "backend.app.routes.email",
+        "peekOfCode": "def get_saved_emails(\n    current_user: User = Depends(get_current_user),\n    db: Session = Depends(get_db)\n):\n    saved = (\n        db.query(EmailHistory)\n        .filter(EmailHistory.user_id == current_user.id, EmailHistory.is_saved == True)\n        .order_by(EmailHistory.created_at.desc())\n        .all()\n    )",
+        "detail": "backend.app.routes.email",
+        "documentation": {}
+    },
+    {
+        "label": "toggle_save_email",
+        "kind": 2,
+        "importPath": "backend.app.routes.email",
+        "description": "backend.app.routes.email",
+        "peekOfCode": "def toggle_save_email(\n    email_id: int,\n    request: EmailSaveRequest,\n    current_user: User = Depends(get_current_user),\n    db: Session = Depends(get_db)\n):\n    email_item = (\n        db.query(EmailHistory)\n        .filter(EmailHistory.id == email_id, EmailHistory.user_id == current_user.id)\n        .first()",
+        "detail": "backend.app.routes.email",
+        "documentation": {}
+    },
+    {
+        "label": "rate_email",
+        "kind": 2,
+        "importPath": "backend.app.routes.email",
+        "description": "backend.app.routes.email",
+        "peekOfCode": "def rate_email(\n    email_id: int,\n    request: EmailRateRequest,\n    current_user: User = Depends(get_current_user),\n    db: Session = Depends(get_db)\n):\n    email_item = (\n        db.query(EmailHistory)\n        .filter(EmailHistory.id == email_id, EmailHistory.user_id == current_user.id)\n        .first()",
+        "detail": "backend.app.routes.email",
+        "documentation": {}
+    },
+    {
+        "label": "delete_email",
+        "kind": 2,
+        "importPath": "backend.app.routes.email",
+        "description": "backend.app.routes.email",
+        "peekOfCode": "def delete_email(\n    email_id: int,\n    current_user: User = Depends(get_current_user),\n    db: Session = Depends(get_db)\n):\n    email_item = (\n        db.query(EmailHistory)\n        .filter(EmailHistory.id == email_id, EmailHistory.user_id == current_user.id)\n        .first()\n    )",
+        "detail": "backend.app.routes.email",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "kind": 5,
+        "importPath": "backend.app.routes.email",
+        "description": "backend.app.routes.email",
+        "peekOfCode": "router = APIRouter(prefix=\"/api/emails\", tags=[\"Emails\"])\n@router.post(\"/generate\", response_model=EmailGenerateResponse)\ndef generate_email(\n    request: EmailGenerateRequest,\n    db: Session = Depends(get_db),\n    current_user: Optional[User] = Depends(get_optional_current_user)\n):\n    params = request.model_dump()\n    result = AIService.generate_email(params)\n    # Save to database if user is authenticated",
+        "detail": "backend.app.routes.email",
+        "documentation": {}
+    },
+    {
+        "label": "AIService",
+        "kind": 6,
+        "importPath": "backend.app.services.ai_service",
+        "description": "backend.app.services.ai_service",
+        "peekOfCode": "class AIService:\n    @staticmethod\n    def _get_gemini_model(custom_key: str = None):\n        key = custom_key or settings.GEMINI_API_KEY\n        if not key:\n            raise ValueError(\"Gemini API key is not configured.\")\n        genai.configure(api_key=key)\n        return genai.GenerativeModel(settings.GEMINI_MODEL)\n    @staticmethod\n    def _get_openai_client(custom_key: str = None):",
+        "detail": "backend.app.services.ai_service",
+        "documentation": {}
+    },
+    {
+        "label": "Settings",
+        "kind": 6,
+        "importPath": "backend.app.config",
+        "description": "backend.app.config",
+        "peekOfCode": "class Settings(BaseSettings):\n    DATABASE_URL: str = Field(default=\"sqlite:///./emails.db\", validation_alias=\"DATABASE_URL\")\n    JWT_SECRET: str = Field(default=\"super-secret-key-smartmail-ai-change-in-production\", validation_alias=\"JWT_SECRET\")\n    JWT_ALGORITHM: str = Field(default=\"HS256\", validation_alias=\"JWT_ALGORITHM\")\n    ACCESS_TOKEN_EXPIRE_MINUTES: int = Field(default=1440, validation_alias=\"ACCESS_TOKEN_EXPIRE_MINUTES\") # 24 hours\n    # AI Keys\n    GEMINI_API_KEY: str = Field(default=\"\", validation_alias=\"GEMINI_API_KEY\")\n    OPENAI_API_KEY: str = Field(default=\"\", validation_alias=\"OPENAI_API_KEY\")\n    # Models\n    GEMINI_MODEL: str = Field(default=\"gemini-1.5-flash\", validation_alias=\"GEMINI_MODEL\")",
+        "detail": "backend.app.config",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "kind": 5,
+        "importPath": "backend.app.config",
+        "description": "backend.app.config",
+        "peekOfCode": "settings = Settings()",
+        "detail": "backend.app.config",
+        "documentation": {}
+    },
+    {
+        "label": "get_db",
+        "kind": 2,
+        "importPath": "backend.app.database",
+        "description": "backend.app.database",
+        "peekOfCode": "def get_db():\n    db = SessionLocal()\n    try:\n        yield db\n    finally:\n        db.close()",
+        "detail": "backend.app.database",
+        "documentation": {}
+    },
+    {
+        "label": "connect_args",
+        "kind": 5,
+        "importPath": "backend.app.database",
+        "description": "backend.app.database",
+        "peekOfCode": "connect_args = {}\nif settings.DATABASE_URL.startswith(\"sqlite\"):\n    connect_args = {\"check_same_thread\": False}\nengine = create_engine(settings.DATABASE_URL, connect_args=connect_args)\nSessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)\nBase = declarative_base()\ndef get_db():\n    db = SessionLocal()\n    try:\n        yield db",
+        "detail": "backend.app.database",
+        "documentation": {}
+    },
+    {
+        "label": "engine",
+        "kind": 5,
+        "importPath": "backend.app.database",
+        "description": "backend.app.database",
+        "peekOfCode": "engine = create_engine(settings.DATABASE_URL, connect_args=connect_args)\nSessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)\nBase = declarative_base()\ndef get_db():\n    db = SessionLocal()\n    try:\n        yield db\n    finally:\n        db.close()",
+        "detail": "backend.app.database",
+        "documentation": {}
+    },
+    {
+        "label": "SessionLocal",
+        "kind": 5,
+        "importPath": "backend.app.database",
+        "description": "backend.app.database",
+        "peekOfCode": "SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)\nBase = declarative_base()\ndef get_db():\n    db = SessionLocal()\n    try:\n        yield db\n    finally:\n        db.close()",
+        "detail": "backend.app.database",
+        "documentation": {}
+    },
+    {
+        "label": "Base",
+        "kind": 5,
+        "importPath": "backend.app.database",
+        "description": "backend.app.database",
+        "peekOfCode": "Base = declarative_base()\ndef get_db():\n    db = SessionLocal()\n    try:\n        yield db\n    finally:\n        db.close()",
+        "detail": "backend.app.database",
+        "documentation": {}
+    },
+    {
+        "label": "read_root",
+        "kind": 2,
+        "importPath": "backend.app.main",
+        "description": "backend.app.main",
+        "peekOfCode": "def read_root():\n    return {\n        \"status\": \"online\",\n        \"app\": \"SmartMail AI API\",\n        \"docs\": \"/docs\",\n        \"message\": \"Welcome to SmartMail AI - Intelligent Email Generator Backend\"\n    }\nif __name__ == \"__main__\":\n    import uvicorn\n    uvicorn.run(\"main:app\", host=\"0.0.0.0\", port=8000, reload=True)",
+        "detail": "backend.app.main",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "backend.app.main",
+        "description": "backend.app.main",
+        "peekOfCode": "app = FastAPI(\n    title=\"SmartMail AI API\",\n    description=\"Backend services for SmartMail AI - Intelligent Email Generator\",\n    version=\"1.0.0\"\n)\n# Set CORS middleware\napp.add_middleware(\n    CORSMiddleware,\n    allow_origins=settings.CORS_ORIGINS,\n    allow_credentials=True,",
+        "detail": "backend.app.main",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "kind": 6,
+        "importPath": "backend.app.models",
+        "description": "backend.app.models",
+        "peekOfCode": "class User(Base):\n    __tablename__ = \"users\"\n    id = Column(Integer, primary_key=True, index=True)\n    email = Column(String, unique=True, index=True, nullable=False)\n    hashed_password = Column(String, nullable=False)\n    created_at = Column(DateTime, default=datetime.datetime.utcnow)\n    # Relationships\n    emails = relationship(\"EmailHistory\", back_populates=\"owner\", cascade=\"all, delete-orphan\")\nclass EmailHistory(Base):\n    __tablename__ = \"email_history\"",
+        "detail": "backend.app.models",
+        "documentation": {}
+    },
+    {
+        "label": "EmailHistory",
+        "kind": 6,
+        "importPath": "backend.app.models",
+        "description": "backend.app.models",
+        "peekOfCode": "class EmailHistory(Base):\n    __tablename__ = \"email_history\"\n    id = Column(Integer, primary_key=True, index=True)\n    user_id = Column(Integer, ForeignKey(\"users.id\", ondelete=\"CASCADE\"), nullable=False)\n    # Form input fields\n    category = Column(String, nullable=False)\n    recipient = Column(String, nullable=True)\n    subject = Column(String, nullable=True)\n    prompt = Column(Text, nullable=False)\n    content = Column(Text, nullable=False) # Generated email text",
+        "detail": "backend.app.models",
+        "documentation": {}
+    },
+    {
+        "label": "UserCreate",
+        "kind": 6,
+        "importPath": "backend.app.schemas",
+        "description": "backend.app.schemas",
+        "peekOfCode": "class UserCreate(BaseModel):\n    email: EmailStr\n    password: str = Field(..., min_length=6, description=\"Password must be at least 6 characters\")\nclass UserLogin(BaseModel):\n    email: EmailStr\n    password: str\nclass UserResponse(BaseModel):\n    id: int\n    email: EmailStr\n    created_at: datetime",
+        "detail": "backend.app.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "UserLogin",
+        "kind": 6,
+        "importPath": "backend.app.schemas",
+        "description": "backend.app.schemas",
+        "peekOfCode": "class UserLogin(BaseModel):\n    email: EmailStr\n    password: str\nclass UserResponse(BaseModel):\n    id: int\n    email: EmailStr\n    created_at: datetime\n    class Config:\n        from_attributes = True\nclass Token(BaseModel):",
+        "detail": "backend.app.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "UserResponse",
+        "kind": 6,
+        "importPath": "backend.app.schemas",
+        "description": "backend.app.schemas",
+        "peekOfCode": "class UserResponse(BaseModel):\n    id: int\n    email: EmailStr\n    created_at: datetime\n    class Config:\n        from_attributes = True\nclass Token(BaseModel):\n    access_token: str\n    token_type: str\nclass TokenData(BaseModel):",
+        "detail": "backend.app.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "Token",
+        "kind": 6,
+        "importPath": "backend.app.schemas",
+        "description": "backend.app.schemas",
+        "peekOfCode": "class Token(BaseModel):\n    access_token: str\n    token_type: str\nclass TokenData(BaseModel):\n    user_id: Optional[int] = None\n# --- EMAIL SCHEMAS ---\nclass EmailGenerateRequest(BaseModel):\n    category: str = Field(..., description=\"e.g., Professional, Leave Request, Cold Email, etc.\")\n    recipient: Optional[str] = Field(None, description=\"Name of the recipient\")\n    subject: Optional[str] = Field(None, description=\"Brief context or custom subject line\")",
+        "detail": "backend.app.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "TokenData",
+        "kind": 6,
+        "importPath": "backend.app.schemas",
+        "description": "backend.app.schemas",
+        "peekOfCode": "class TokenData(BaseModel):\n    user_id: Optional[int] = None\n# --- EMAIL SCHEMAS ---\nclass EmailGenerateRequest(BaseModel):\n    category: str = Field(..., description=\"e.g., Professional, Leave Request, Cold Email, etc.\")\n    recipient: Optional[str] = Field(None, description=\"Name of the recipient\")\n    subject: Optional[str] = Field(None, description=\"Brief context or custom subject line\")\n    prompt: str = Field(..., description=\"What the user wants to say in the email\")\n    tone: str = Field(\"Professional\", description=\"e.g., Professional, Friendly, Formal, Casual, etc.\")\n    length: str = Field(\"Medium\", description=\"Short, Medium, or Long\")",
+        "detail": "backend.app.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "EmailGenerateRequest",
+        "kind": 6,
+        "importPath": "backend.app.schemas",
+        "description": "backend.app.schemas",
+        "peekOfCode": "class EmailGenerateRequest(BaseModel):\n    category: str = Field(..., description=\"e.g., Professional, Leave Request, Cold Email, etc.\")\n    recipient: Optional[str] = Field(None, description=\"Name of the recipient\")\n    subject: Optional[str] = Field(None, description=\"Brief context or custom subject line\")\n    prompt: str = Field(..., description=\"What the user wants to say in the email\")\n    tone: str = Field(\"Professional\", description=\"e.g., Professional, Friendly, Formal, Casual, etc.\")\n    length: str = Field(\"Medium\", description=\"Short, Medium, or Long\")\n    language: str = Field(\"English\", description=\"Language of the generated email\")\n    # Allows users to use their own keys if configured\n    user_gemini_key: Optional[str] = None",
+        "detail": "backend.app.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "EmailGenerateResponse",
+        "kind": 6,
+        "importPath": "backend.app.schemas",
+        "description": "backend.app.schemas",
+        "peekOfCode": "class EmailGenerateResponse(BaseModel):\n    subject: str\n    content: str\n    score_grammar: int\n    score_spam: int\n    score_clarity: int\nclass EmailImprovePromptRequest(BaseModel):\n    prompt: str\n    user_gemini_key: Optional[str] = None\n    user_openai_key: Optional[str] = None",
+        "detail": "backend.app.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "EmailImprovePromptRequest",
+        "kind": 6,
+        "importPath": "backend.app.schemas",
+        "description": "backend.app.schemas",
+        "peekOfCode": "class EmailImprovePromptRequest(BaseModel):\n    prompt: str\n    user_gemini_key: Optional[str] = None\n    user_openai_key: Optional[str] = None\n    provider: Optional[str] = \"gemini\"\nclass EmailImprovePromptResponse(BaseModel):\n    improved_prompt: str\nclass EmailRewriteRequest(BaseModel):\n    email_content: str\n    instruction: str = Field(..., description=\"Instruction on how to rewrite: e.g., 'Make it more formal', 'Shorten it', etc.\")",
+        "detail": "backend.app.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "EmailImprovePromptResponse",
+        "kind": 6,
+        "importPath": "backend.app.schemas",
+        "description": "backend.app.schemas",
+        "peekOfCode": "class EmailImprovePromptResponse(BaseModel):\n    improved_prompt: str\nclass EmailRewriteRequest(BaseModel):\n    email_content: str\n    instruction: str = Field(..., description=\"Instruction on how to rewrite: e.g., 'Make it more formal', 'Shorten it', etc.\")\n    tone: Optional[str] = None\n    length: Optional[str] = None\n    user_gemini_key: Optional[str] = None\n    user_openai_key: Optional[str] = None\n    provider: Optional[str] = \"gemini\"",
+        "detail": "backend.app.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "EmailRewriteRequest",
+        "kind": 6,
+        "importPath": "backend.app.schemas",
+        "description": "backend.app.schemas",
+        "peekOfCode": "class EmailRewriteRequest(BaseModel):\n    email_content: str\n    instruction: str = Field(..., description=\"Instruction on how to rewrite: e.g., 'Make it more formal', 'Shorten it', etc.\")\n    tone: Optional[str] = None\n    length: Optional[str] = None\n    user_gemini_key: Optional[str] = None\n    user_openai_key: Optional[str] = None\n    provider: Optional[str] = \"gemini\"\nclass EmailRewriteResponse(BaseModel):\n    subject: Optional[str] = None",
+        "detail": "backend.app.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "EmailRewriteResponse",
+        "kind": 6,
+        "importPath": "backend.app.schemas",
+        "description": "backend.app.schemas",
+        "peekOfCode": "class EmailRewriteResponse(BaseModel):\n    subject: Optional[str] = None\n    content: str\nclass EmailSummarizeRequest(BaseModel):\n    email_content: str\n    user_gemini_key: Optional[str] = None\n    user_openai_key: Optional[str] = None\n    provider: Optional[str] = \"gemini\"\nclass EmailSummarizeResponse(BaseModel):\n    summary: str",
+        "detail": "backend.app.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "EmailSummarizeRequest",
+        "kind": 6,
+        "importPath": "backend.app.schemas",
+        "description": "backend.app.schemas",
+        "peekOfCode": "class EmailSummarizeRequest(BaseModel):\n    email_content: str\n    user_gemini_key: Optional[str] = None\n    user_openai_key: Optional[str] = None\n    provider: Optional[str] = \"gemini\"\nclass EmailSummarizeResponse(BaseModel):\n    summary: str\nclass EmailScoreRequest(BaseModel):\n    email_content: str\n    user_gemini_key: Optional[str] = None",
+        "detail": "backend.app.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "EmailSummarizeResponse",
+        "kind": 6,
+        "importPath": "backend.app.schemas",
+        "description": "backend.app.schemas",
+        "peekOfCode": "class EmailSummarizeResponse(BaseModel):\n    summary: str\nclass EmailScoreRequest(BaseModel):\n    email_content: str\n    user_gemini_key: Optional[str] = None\n    user_openai_key: Optional[str] = None\n    provider: Optional[str] = \"gemini\"\nclass EmailScoreResponse(BaseModel):\n    score_grammar: int\n    score_spam: int",
+        "detail": "backend.app.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "EmailScoreRequest",
+        "kind": 6,
+        "importPath": "backend.app.schemas",
+        "description": "backend.app.schemas",
+        "peekOfCode": "class EmailScoreRequest(BaseModel):\n    email_content: str\n    user_gemini_key: Optional[str] = None\n    user_openai_key: Optional[str] = None\n    provider: Optional[str] = \"gemini\"\nclass EmailScoreResponse(BaseModel):\n    score_grammar: int\n    score_spam: int\n    score_clarity: int\n    suggestions: List[str]",
+        "detail": "backend.app.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "EmailScoreResponse",
+        "kind": 6,
+        "importPath": "backend.app.schemas",
+        "description": "backend.app.schemas",
+        "peekOfCode": "class EmailScoreResponse(BaseModel):\n    score_grammar: int\n    score_spam: int\n    score_clarity: int\n    suggestions: List[str]\nclass EmailSaveRequest(BaseModel):\n    is_saved: bool\nclass EmailRateRequest(BaseModel):\n    rating: int = Field(..., ge=0, le=5)\nclass EmailHistoryResponse(BaseModel):",
+        "detail": "backend.app.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "EmailSaveRequest",
+        "kind": 6,
+        "importPath": "backend.app.schemas",
+        "description": "backend.app.schemas",
+        "peekOfCode": "class EmailSaveRequest(BaseModel):\n    is_saved: bool\nclass EmailRateRequest(BaseModel):\n    rating: int = Field(..., ge=0, le=5)\nclass EmailHistoryResponse(BaseModel):\n    id: int\n    user_id: int\n    category: str\n    recipient: Optional[str] = None\n    subject: Optional[str] = None",
+        "detail": "backend.app.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "EmailRateRequest",
+        "kind": 6,
+        "importPath": "backend.app.schemas",
+        "description": "backend.app.schemas",
+        "peekOfCode": "class EmailRateRequest(BaseModel):\n    rating: int = Field(..., ge=0, le=5)\nclass EmailHistoryResponse(BaseModel):\n    id: int\n    user_id: int\n    category: str\n    recipient: Optional[str] = None\n    subject: Optional[str] = None\n    prompt: str\n    content: str",
+        "detail": "backend.app.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "EmailHistoryResponse",
+        "kind": 6,
+        "importPath": "backend.app.schemas",
+        "description": "backend.app.schemas",
+        "peekOfCode": "class EmailHistoryResponse(BaseModel):\n    id: int\n    user_id: int\n    category: str\n    recipient: Optional[str] = None\n    subject: Optional[str] = None\n    prompt: str\n    content: str\n    tone: str\n    length: str",
+        "detail": "backend.app.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "_Known",
+        "kind": 6,
+        "importPath": "frontend.node_modules.flatted.python.flatted",
+        "description": "frontend.node_modules.flatted.python.flatted",
+        "peekOfCode": "class _Known:\n    def __init__(self):\n        self.key = []\n        self.value = []\nclass _String:\n    def __init__(self, value):\n        self.value = value\ndef _array_keys(value):\n    for i in range(len(value)):\n        yield i",
+        "detail": "frontend.node_modules.flatted.python.flatted",
+        "documentation": {}
+    },
+    {
+        "label": "_String",
+        "kind": 6,
+        "importPath": "frontend.node_modules.flatted.python.flatted",
+        "description": "frontend.node_modules.flatted.python.flatted",
+        "peekOfCode": "class _String:\n    def __init__(self, value):\n        self.value = value\ndef _array_keys(value):\n    for i in range(len(value)):\n        yield i\ndef _object_keys(value):\n    for key in value:\n        yield key\ndef _is_array(value):",
+        "detail": "frontend.node_modules.flatted.python.flatted",
+        "documentation": {}
+    },
+    {
+        "label": "parse",
+        "kind": 2,
+        "importPath": "frontend.node_modules.flatted.python.flatted",
+        "description": "frontend.node_modules.flatted.python.flatted",
+        "peekOfCode": "def parse(value, *args, **kwargs):\n    json = _json.loads(value, *args, **kwargs)\n    wrapped = []\n    for value in json:\n        wrapped.append(_wrap(value))\n    input = []\n    for value in wrapped:\n        if isinstance(value, _String):\n            input.append(value.value)\n        else:",
+        "detail": "frontend.node_modules.flatted.python.flatted",
+        "documentation": {}
+    },
+    {
+        "label": "stringify",
+        "kind": 2,
+        "importPath": "frontend.node_modules.flatted.python.flatted",
+        "description": "frontend.node_modules.flatted.python.flatted",
+        "peekOfCode": "def stringify(value, *args, **kwargs):\n    known = _Known()\n    input = []\n    output = []\n    i = int(_index(known, input, value))\n    while i < len(input):\n        output.append(_transform(known, input, input[i]))\n        i += 1\n    return _json.dumps(output, *args, **kwargs)",
+        "detail": "frontend.node_modules.flatted.python.flatted",
+        "documentation": {}
+    }
+]
