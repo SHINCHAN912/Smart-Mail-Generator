@@ -1,0 +1,12 @@
+{
+  "name": "smart-email-generator-root",
+  "version": "1.0.0",
+  "description": "Root scripts to run frontend and backend of Smart Email Generator 2 concurrently",
+  "scripts": {
+    "backend": "cd backend && venv\\Scripts\\python -m uvicorn app.main:app --port 8000 --reload",
+    "frontend": "npm run dev --prefix frontend",
+    "dev": "npx concurrently --kill-others \"npm run backend\" \"npm run frontend\"",
+    "build": "npm run build --prefix frontend",
+    "start": "npx concurrently --kill-others \"cd backend && venv\\Scripts\\python -m uvicorn app.main:app --port 8000\" \"npm run start --prefix frontend\""
+  }
+}
