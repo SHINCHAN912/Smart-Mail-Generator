@@ -16,7 +16,11 @@ class Settings(BaseSettings):
     GROQ_MODEL: str = Field(default="llama-3.3-70b-versatile", validation_alias="GROQ_MODEL")
     
     # CORS
-    CORS_ORIGINS: List[str] = ["http://localhost:3000", "http://localhost:3001"]
+    CORS_ORIGINS: List[str] = [
+        "http://localhost:3000", 
+        "http://localhost:3001",
+        "https://smart-mail-generator-five.vercel.app"
+    ]
 
     model_config = SettingsConfigDict(
         env_file=".env",
