@@ -37,6 +37,8 @@ export default function EmailWorkspace({
   onAddHistory,
   onUpdateDraft,
 }: EmailWorkspaceProps) {
+  const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+
   // Form Config state
   const [config, setConfig] = useState<EmailConfig>({
     category: 'Professional',
@@ -95,7 +97,7 @@ export default function EmailWorkspace({
     if (!config.prompt.trim()) return;
     setGenerating(true);
     try {
-      const res = await fetch('http://localhost:8000/api/emails/generate', {
+      const res = await fetch(`${API_BASE_URL}/api/emails/generate`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -157,7 +159,7 @@ export default function EmailWorkspace({
     if (!config.prompt.trim()) return;
     setImprovingPrompt(true);
     try {
-      const res = await fetch('http://localhost:8000/api/emails/improve-prompt', {
+      const res = await fetch(`${API_BASE_URL}/api/emails/improve-prompt`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -183,7 +185,7 @@ export default function EmailWorkspace({
     if (!draft?.content || !rewriteInstruction.trim()) return;
     setRewriting(true);
     try {
-      const res = await fetch('http://localhost:8000/api/emails/rewrite', {
+      const res = await fetch(`${API_BASE_URL}/api/emails/rewrite`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -224,7 +226,7 @@ export default function EmailWorkspace({
     if (!draft?.content) return;
     setScoring(true);
     try {
-      const res = await fetch('http://localhost:8000/api/emails/score', {
+      const res = await fetch(`${API_BASE_URL}/api/emails/score`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
